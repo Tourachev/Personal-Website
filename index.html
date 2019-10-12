@@ -1,45 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta name="viewport" content ="width=device-width,initial-scale=1,user-scalable=yes" />
-    <title>Hi, I'm Slav</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-</head>
-<body>
-    <div id="navbar">
-        <div>
-            <a href="#front-page" id="brand">VT</a>
-        </div>
-        <div>
-            <a href="#portfolio-page">PORTFOLIO</a>
-            <a href="#contact-page">CONTACT</a>
-        </div>
-    </div>
-    <canvas id="canvas-basic"></canvas>
+    <head>
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,user-scalable=yes"
+        />
+        <title>Hi, I'm Slav</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+            rel="stylesheet"
+        />
+        <link
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            rel="stylesheet"
+            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+            crossorigin="anonymous"
+        />
+    </head>
 
-    <div id="front-page">
-        <div id="greeting">
-            <h1> <spav class="element"> Test </span> </h1>
-            <a href="#navbar-catch"><div class="enter-button">Enter!</div></a>
+    <body>
+        <div id="navbar">
+            <div>
+                <a href="#front-page" id="brand">VT</a>
+            </div>
+            <div>
+                <a href="#portfolio-page">PORTFOLIO</a>
+                <a href="#contact-page">CONTACT</a>
+            </div>
         </div>
-    </div>
+        <canvas id="canvas-basic"></canvas>
 
-    <div id="skills-page">
-        <div id="navbar-catch"></div>
-        <div id="skills-button-row" data-aos="fade-down"  data-aos-easing="ease-out-cubic" data-aos-duration="2000">
-            <div class="hvr-float-shadow active"><a href="#front-page">Skills</a></div>
-            <hr class="horizontal">
-            <hr class="vertical">
-            <div class="hvr-float-shadow"><a href="">Education</a></div>
-            <hr class="horizontal">
-            <hr class="vertical">
-            <div class="hvr-float-shadow"><a href="">About Me</a></div>
+        <div id="front-page">
+            <div id="greeting">
+                <h1>
+                    <span class="element"> Test </span>
+                </h1>
+                <a href="#navbar-catch">
+                    <div class="enter-button">Enter!</div>
+                </a>
+            </div>
         </div>
-        <!-- <div id="skills-description">
+
+        <div id="skills-page">
+            <div id="navbar-catch"></div>
+
+            <!-- <div class="button-row">
+                <div id="sideways1"><h1>SKILLS</h1></div>
+                <div id="sideways2"><h1>EDUCATION</h1></div>
+                <div id="sideways3"><h1>ABOUT ME</h1></div>
+            </div> -->
+
+            <!-- <div class="button-cols">
+                <div cl></div>
+                <div></div>
+                <div></div>
+            </div>   -->
+
+            <!-- CONSERVATIVE STYLING -->
+
+            <div
+                id="skills-button-row"
+                data-aos="fade-left"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="800"
+            >
+                <div class="hvr-float-shadow" id="skills-button">
+                    <a href="#" id="skills-buttona" class="active-button"
+                        >Skills</a
+                    >
+                </div>
+                <hr class="horizontal" />
+                <hr class="vertical" />
+                <div class="hvr-float-shadow" id="education-button">
+                    <a href="#" id="education-buttona">Education</a>
+                </div>
+                <hr class="horizontal" />
+                <hr class="vertical" />
+                <div class="hvr-float-shadow" id="aboutme-button">
+                    <a href="#" id="aboutme-buttona">About Me</a>
+                </div>
+            </div>
+            <div
+                data-aos="fade-right"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="1000"
+                id="skill-wrap"
+            >
+                <div id="skills-description">
+                    <div id="skills-content-block">
+                        <div>
+                            <h1 class="display-4">Languages</h1>
+                            <hr />
+                            <p>Javascript, SQL, HTML5, CSS3, Swift, Java, C.</p>
+                            <h1 class="display-4">Technical</h1>
+                            <hr />
+                            <p>
+                                Node.js, React, Electron, Express, Grunt, Git,
+                                Sass.
+                            </p>
+                            <h1 class="display-4">Personal</h1>
+                            <hr />
+                            <p>
+                                Teamwork, Communication, Leadership, Critical
+                                Thinking, Problem Solving
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hidden" id="education-description">
+                    <div id="education-content-block">
+                        <div>
+                            <h1 class="display-4">
+                                Florida International University
+                            </h1>
+                            <hr />
+                            <p>Bachelor of Science, Computer Science</p>
+                            <h1 class="display-4">Broward College</h1>
+                            <hr />
+                            <p>Associate of Arts, Civil Engineering</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hidden" id="aboutme-description">
+                    <div id="aboutme-content-block">
+                        <h1 class="display-4 center">
+                            A Student, A Sailor, A Web Developer
+                        </h1>
+                        <p id="about-p">
+                            My name is Slav. I was born in Russia, but now I
+                            live in South Florida. I am a former Chemistry
+                            student and hold a minor in International Relations.
+                            I enlisted in the Navy Reserves as a Construction
+                            Mechanic when I was 21. I fluently speak Russian and
+                            English.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HEXAGON TRIALS -->
+
+            <!-- <div id="skills-description">
             <ul id="grid" class="clear">
                 <li>
                     <div class="hexagon" id="html-hex">
@@ -81,12 +195,92 @@
                 </li>
             </ul>
         </div> -->
-    </div>
+        </div>
+        <div id="navbar-catch">
+            <br />
+            <br />
+        </div>
 
-    <div id="portfolio-page">
-        <br>
-        <h1>Projects</h1>
-        <!-- <div id="project-layout">
+        <div id="portfolio-page">
+            <br />
+            <h1 class="display-4" data-aos="fade-left">Projects</h1>
+            <div
+                class="project-card-w"
+                data-aos="fade-right"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="1000"
+            >
+                <div class="card-l">
+                    <img src="./img/img2.svg" alt="" class="logo" />
+                    <button
+                        type="button"
+                        class="btn btn-outline-light"
+                        style="margin-bottom: 3%;"
+                    >
+                        <a href="">GitHub</a> &nbsp<i class="fab fa-github"></i>
+                    </button>
+
+                    <button type="button" class="btn btn-outline-light">
+                        <a href="">Download</a>&nbsp<i
+                            class="fas fa-arrow-circle-down"
+                        ></i>
+                    </button>
+                </div>
+
+                <div class="card-r">
+                    <h3 style="text-align: center">SCW Learning App</h3>
+                    <br />
+                    <h4>Built on Electron with a SQLite Database</h4>
+                    <p>HTML5, CSS3, Javascript, SQL</p>
+                    <p>
+                        An app that allows sailors to test their knowledge in
+                        Seabee Combat Warfare theory. It has functionality of a
+                        quiz, options to choose sections for practice and view
+                        knowledge and test statistics. App utilizes a SQLite
+                        database that allows for scalability and ease of
+                        inserting data with further peer to peer distribution of
+                        updated questions without the need of a developer.
+                    </p>
+                </div>
+            </div>
+            <br />
+            <div
+                class="project-card-w"
+                data-aos="fade-left"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="1000"
+            >
+                <div class="card-l">
+                    <img src="./img/img1.png" alt="" class="logo" />
+                    <button
+                        type="button"
+                        class="btn btn-outline-light"
+                        style="margin-bottom: 3%;"
+                    >
+                        <a href="">GitHub</a> &nbsp<i class="fab fa-github"></i>
+                    </button>
+
+                    <button type="button" class="btn btn-outline-light">
+                        <a href="">Visit</a>&nbsp<i
+                            class="fas fa-arrow-right"
+                        ></i>
+                    </button>
+                </div>
+
+                <div class="card-r">
+                    <h3 style="text-align: center">Sailors Toolbox Website</h3>
+                    <br />
+                    <h4>Static Website</h4>
+                    <p>HTML5, CSS3, Javascript</p>
+                    <p>
+                        A website that localized links and information necessary
+                        for success as a reservist sailor.
+                    </p>
+                </div>
+            </div>
+            <br />
+
+            <!-- <div id="project-layout">
             <div class="project-card" id="">
                 <div class="top-card-img">
 
@@ -98,29 +292,63 @@
             <div class="project-card"></div>
             <div class="project-card"></div>
         </div>   -->
-    </div>
-    <div id="contact-page">
-        <h1>Contact Me</h1>
-        <div id="contact-button-row">
-            <div>
-                <div class="contact-button fancy-button" data-aos="fade-left">EMAIL <i class="far fa-envelope contact-logo"></i></div>
-            </div>
-            <div class="contact-button-logos">
-                <div class="contact-button fancy-button" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="700">GITHUB<i class="fab fa-github contact-logo"></i></div>
-            </div>
-            <div>
-                <div class="contact-button fancy-button" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000">LINKEDIN<i class="fab fa-linkedin contact-logo"></i></div>
-            </div>
         </div>
-    </div>
+        <div id="contact-page">
+            <h1>Contact Me</h1>
+            <div id="contact-button-row">
+                <div>
+                    <div
+                        class="contact-button fancy-button"
+                        data-aos="fade-left"
+                    >
+                        EMAIL <i class="far fa-envelope contact-logo"></i>
+                    </div>
+                </div>
+                <div class="contact-button-logos">
+                    <div
+                        class="contact-button fancy-button"
+                        data-aos="fade-left"
+                        data-aos-easing="linear"
+                        data-aos-duration="700"
+                    >
+                        <a href="https://github.com/Tourachev">GITHUB</a
+                        ><i class="fab fa-github contact-logo"></i>
+                    </div>
+                </div>
+                <div>
+                    <div
+                        class="contact-button fancy-button"
+                        data-aos="fade-left"
+                        data-aos-easing="linear"
+                        data-aos-duration="1000"
+                    >
+                        <a
+                            href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact_info%3BMIFoyBzKQ0GlBkccUSk3qw%3D%3D"
+                            >LINKEDIN</a
+                        ><i class="fab fa-linkedin contact-logo"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="contact-button fancy-button">
+                <p style="text-align: center">BEAM ME UP SCOTTY</p>
+            </div> -->
+        </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/granim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
-    <script src="https://kit.fontawesome.com/7c6a04c2a0.js"></script>
-    <script src="js/script.js"></script>
-</body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="js/granim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+        <script src="https://kit.fontawesome.com/7c6a04c2a0.js"></script>
+        <script src="js/script.js"></script>
+    </body>
 </html>
