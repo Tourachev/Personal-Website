@@ -11,6 +11,7 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	width: 100%;
 	height: 100%;
+	overflow-x: hidden;
 }
 
 a {
@@ -679,6 +680,15 @@ p {
 }
 
 @media screen and (max-width: 800px) {
+	/* #skills-page {
+		margin-top: -20vh;
+	} */
+
+	#greeting {
+		padding: 3%;
+		padding-top: 40%;
+	}
+
 	#skills-button-row .vertical {
 		display: none !important;
 	}
