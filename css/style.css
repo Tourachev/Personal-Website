@@ -23,6 +23,15 @@ p {
 	font-size: 1.4em;
 }
 
+/* #portfolio-page img {
+	border-radius: 50%;
+} */
+
+#cook-img {
+	height: auto;
+	max-width: 93%;
+}
+
 .hidden {
 	display: none;
 }
