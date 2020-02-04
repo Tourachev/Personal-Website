@@ -1,9 +1,9 @@
 $(function() {
 	$(window).scroll(function() {
-		if ($(this).scrollTop() > 712) {
+		if ($(this).scrollTop() > 860) {
 			$('body #navbar ').addClass('colorBack');
 		}
-		if ($(this).scrollTop() < 712) {
+		if ($(this).scrollTop() < 860) {
 			$('body #navbar').removeClass('colorBack');
 		}
 	});
