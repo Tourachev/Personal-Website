@@ -27,9 +27,9 @@ p {
 	border-radius: 50%;
 } */
 
-#cook-img {
+.cook-img {
 	height: auto;
-	max-width: 93%;
+	max-width: 93% !important;
 }
 
 .hidden {
