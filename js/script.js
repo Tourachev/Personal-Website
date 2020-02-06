@@ -76,7 +76,7 @@ var granimInstance = new Granim({
 AOS.init();
 
 var options = {
-	strings: ['', "Hi, I'm Slav ^1000 <br> I'm a Computer Science Student"],
+	strings: ['', "Hi, I'm Slav! ^800 <br> I'm a Computer Science Student."],
 	typeSpeed: 90
 };
 
