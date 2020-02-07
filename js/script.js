@@ -1,9 +1,9 @@
 $(function() {
 	$(window).scroll(function() {
-		if ($(this).scrollTop() > 860) {
+		if ($(this).scrollTop() > 890) {
 			$('body #navbar ').addClass('colorBack');
 		}
-		if ($(this).scrollTop() < 860) {
+		if ($(this).scrollTop() < 890) {
 			$('body #navbar').removeClass('colorBack');
 		}
 	});
@@ -84,7 +84,7 @@ var typed = new Typed('.element', options);
 
 particlesJS('particles-js', {
 	particles: {
-		number: {value: 100, density: {enable: true, value_area: 800}},
+		number: {value: 150, density: {enable: true, value_area: 800}},
 		color: {value: '#ffffff'},
 		shape: {
 			type: 'circle',
@@ -123,17 +123,17 @@ particlesJS('particles-js', {
 	interactivity: {
 		detect_on: 'canvas',
 		events: {
-			onhover: {enable: true, mode: 'repulse'},
-			onclick: {enable: true, mode: 'push'},
+			onhover: {enable: true, mode: 'bubble'},
+			onclick: {enable: true, mode: 'repulse'},
 			resize: true
 		},
 		modes: {
 			grab: {distance: 400, line_linked: {opacity: 1}},
 			bubble: {
-				distance: 400,
-				size: 40,
+				distance: 100,
+				size: 5,
 				duration: 2,
-				opacity: 8,
+				opacity: 10,
 				speed: 3
 			},
 			repulse: {distance: 80, duration: 0.4},
@@ -143,23 +143,24 @@ particlesJS('particles-js', {
 	},
 	retina_detect: true
 });
-var count_particles, stats, update;
-stats = new Stats();
-stats.setMode(0);
-stats.domElement.style.position = 'absolute';
-stats.domElement.style.left = '0px';
-stats.domElement.style.top = '0px';
-document.body.appendChild(stats.domElement);
-count_particles = document.querySelector('.js-count-particles');
-update = function() {
-	stats.begin();
-	stats.end();
-	if (
-		window.pJSDom[0].pJS.particles &&
-		window.pJSDom[0].pJS.particles.array
-	) {
-		count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+
+const burst = new mojs.Burst({
+	left: 0,
+	top: 0,
+	radius: {4: 60},
+	angle: 45,
+	children: {
+		shape: 'line',
+		radius: 3,
+		scale: 1,
+		stroke: '#FD7932',
+		strokeDasharray: '100%',
+		strokeDashoffset: {'-100%': '100%'},
+		duration: 700,
+		easing: 'quad.out'
 	}
-	requestAnimationFrame(update);
-};
-requestAnimationFrame(update);
+});
+
+document.addEventListener('click', function(e) {
+	burst.tune({x: e.pageX, y: e.pageY}).replay();
+});

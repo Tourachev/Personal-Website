@@ -54,6 +54,11 @@ p {
 #about-p {
 	width: 70%;
 }
+/* 
+.absolute {
+	position: absolute;
+	margin: auto;
+} */
 
 #navbar {
 	position: absolute;
@@ -130,11 +135,13 @@ p {
 }
 
 #greeting {
-	position: relative;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding-top: 20%;
+	top: 40%;
 	text-align: center;
 }
 
