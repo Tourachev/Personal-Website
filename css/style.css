@@ -270,6 +270,10 @@ p {
 	width: 100%;
 }
 
+#education-description {
+	width: 100%;
+}
+
 #aboutme-content-block {
 	/* border: 1px solid black; */
 	margin-top: 2%;
@@ -699,14 +703,20 @@ p {
 	transition: 800ms ease all;
 }
 
+.invisible-on-desktop {
+	display: none;
+}
+
 @media screen and (max-width: 800px) {
 	/* #skills-page {
 		margin-top: -20vh;
 	} */
-
+	.invisible-on-desktop {
+		display: block;
+	}
 	#greeting {
 		padding: 3%;
-		padding-top: 40%;
+		top: 40% !important;
 	}
 
 	#skills-button-row .vertical {
@@ -724,8 +734,43 @@ p {
 		padding-left: 0% !important;
 	}
 
+	#navbar-catch {
+		width: 100%;
+		/* Full width */
+		height: 70px;
+		background: black !important;
+		color: #fff;
+	}
+
 	.hideOverflowOnMobile {
 		overflow: hidden;
+	}
+	#skills-page {
+		height: 120vh;
+	}
+	#skills-content-block {
+		width: auto;
+		word-wrap: break-word;
+		padding: 5% !important;
+	}
+
+	#aboutme-content-block {
+		/* border: 1px solid black; */
+		width: auto;
+	}
+	#about-p {
+		width: 90% !important;
+	}
+
+	#education-content-block {
+		width: auto;
+	}
+
+	h1 {
+		font-size: 40px !important;
+	}
+	h2 {
+		font-size: 25px !important;
 	}
 }
 

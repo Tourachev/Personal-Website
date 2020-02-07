@@ -1,10 +1,23 @@
+let navbar_adjust = 890;
+
+function myFunction(x) {
+	if (x.matches) {
+		// If media query matches
+		navbar_adjust = 807;
+	}
+}
+
+var x = window.matchMedia('(max-width: 800px)');
+myFunction(x); // Call listener function at run time
+x.addListener(myFunction); // Attach listener function on state changes
+
 $(function() {
 	$(window).scroll(function() {
-		if ($(this).scrollTop() > 890) {
-			$('body #navbar ').addClass('colorBack');
+		if ($(this).scrollTop() > navbar_adjust) {
+			$('body #navbar ').addClass('colorBack', 1000, 'easeOutBounce');
 		}
-		if ($(this).scrollTop() < 890) {
-			$('body #navbar').removeClass('colorBack');
+		if ($(this).scrollTop() < navbar_adjust) {
+			$('body #navbar').removeClass('colorBack', 1000, 'easeOutBounce');
 		}
 	});
 });
@@ -152,7 +165,7 @@ const burst = new mojs.Burst({
 	children: {
 		shape: 'line',
 		radius: 3,
-		scale: 1,
+		scale: 2,
 		stroke: '#FD7932',
 		strokeDasharray: '100%',
 		strokeDashoffset: {'-100%': '100%'},
