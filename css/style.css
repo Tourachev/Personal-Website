@@ -233,7 +233,7 @@ button a {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	height: 110%;
+	height: 100vh;
 	width: 100%;
 	background-color: #f3e6e8;
 	background-image: linear-gradient(315deg, #f3e6e8 0%, #d5d0e5 74%);
@@ -617,17 +617,8 @@ button a {
 	height: 10px;
 	width: 90%;
 	opacity: 0;
-	background: -webkit-radial-gradient(
-		center,
-		ellipse,
-		rgba(0, 0, 0, 0.35) 0%,
-		rgba(0, 0, 0, 0) 80%
-	);
-	background: radial-gradient(
-		ellipse at center,
-		rgba(0, 0, 0, 0.35) 0%,
-		rgba(0, 0, 0, 0) 80%
-	);
+	background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+	background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
 	/* W3C */
 	-webkit-transition-duration: 0.3s;
 	transition-duration: 0.3s;
