@@ -61,14 +61,14 @@ p {
 } */
 
 #navbar {
-	position: absolute;
+	position: fixed;
 
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	overflow: hidden;
-	background-color: rgba(0, 0, 0, 0);
-	position: fixed;
+	/* background-color: rgba(0, 0, 0, 0); */
+	/* position: fixed; */
 	/* Set the navbar to fixed position */
 	top: 0;
 	/* Position the navbar at the top of the page */
@@ -77,6 +77,8 @@ p {
 	height: 9%;
 	padding: 0% 3% 0% 3%;
 	/* transition: 0.3s all; */
+	z-index: 50;
+	background: linear-gradient(to bottom, #000000, rgba(255, 0, 0, 0));
 }
 
 .colorBack {
@@ -127,7 +129,7 @@ p {
 	position: absolute;
 	display: block;
 	width: 100%;
-	height: 100vh;
+	height: 350vh;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -229,14 +231,19 @@ button a {
 }
 
 #skills-page {
+	margin-left: 10%;
+	/* position: absolute; */
+	z-index: 2;
+
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	height: 100vh;
-	width: 100%;
+	width: 80%;
 	background-color: #f3e6e8;
 	background-image: linear-gradient(315deg, #f3e6e8 0%, #d5d0e5 74%);
+	border: 30px solid black;
 }
 
 #skills-button-row {
@@ -362,10 +369,13 @@ button a {
 }
 
 #portfolio-page {
-	width: 100%;
+	margin-left: 10%;
+	width: 80%;
 	height: 150%;
-	background-color: #d4418e;
-	background-image: linear-gradient(315deg, #0652c5 0%, #d4418e 74%);
+	/* background-color: #d4418e;
+	background-image: linear-gradient(315deg, #0652c5 0%, #d4418e 74%); */
+	z-index: 2;
+	position: relative;
 
 	display: flex;
 	flex-direction: column;
@@ -446,7 +456,7 @@ button a {
 
 #contact-page {
 	width: 100%;
-	height: 30em;
+	height: 40em;
 	background: black;
 }
 
@@ -917,15 +927,12 @@ canvas {
 	54%,
 	56%,
 	100% {
-		text-shadow: -0.2rem -0.2rem 1rem #fff, 0.2rem 0.2rem 1rem #fff,
-			0 0 2rem var(--neon-text-color), 0 0 4rem var(--neon-text-color),
-			0 0 6rem var(--neon-text-color), 0 0 8rem var(--neon-text-color),
+		text-shadow: -0.2rem -0.2rem 1rem #fff, 0.2rem 0.2rem 1rem #fff, 0 0 2rem var(--neon-text-color),
+			0 0 4rem var(--neon-text-color), 0 0 6rem var(--neon-text-color), 0 0 8rem var(--neon-text-color),
 			0 0 10rem var(--neon-text-color);
 
-		box-shadow: 0 0 0.5rem #fff, inset 0 0 0.5rem #fff,
-			0 0 2rem var(--neon-border-color),
-			inset 0 0 2rem var(--neon-border-color),
-			0 0 4rem var(--neon-border-color),
+		box-shadow: 0 0 0.5rem #fff, inset 0 0 0.5rem #fff, 0 0 2rem var(--neon-border-color),
+			inset 0 0 2rem var(--neon-border-color), 0 0 4rem var(--neon-border-color),
 			inset 0 0 4rem var(--neon-border-color);
 	}
 
