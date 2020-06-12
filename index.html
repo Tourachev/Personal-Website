@@ -17,29 +17,23 @@
 </div>
 <div id="content">
 	<div id="greeting" class="d-flex content-section flex-row">
+		
 		<div id="hi">
 			<h1>
-				<span class="typing">Test</span>
+				<span class="typing">$ sudo rm -rf /</span>
 			</h1>
-			<button class="btn btn-outline-dark btn-lg">Check out my website &nbsp <i class="fa fa-arrow-down"
-					aria-hidden="true"></i>
-			</button>
+
+			<i class="fa fa-arrow-down" style=" font-size: 10em;" aria-hidden="true"></i>
+
 		</div>
-		<div class="flex-column justify-content-center wheel-assembly">
-			<!-- <h1> Get..</h1> -->
-			<i class="fa fa-plus" aria-hidden="true"></i>
-			<div id="wheel">
-				<div class="button-fixed-size wheel-item"><button
-						class="btn btn-outline-dark btn-block btn-large">Github</button>
-				</div>
-				<div class="button-fixed-size wheel-item"><button
-						class="btn btn-outline-dark  btn-block">LinkedIn</button></div>
-				<div class="button-fixed-size wheel-item"><button class="btn btn-outline-dark btn-block">Resume</button>
-				</div>
-				<div class="button-fixed-size wheel-item"><button
-						class="btn btn-outline-dark btn-block">Projects</button></div>
-			</div>
+
+		<div class="d-flex flex-column button-pannel">
+			<a href=""><button class="custom-button "><i class="fa fa-github" aria-hidden="true"></i> &nbsp &nbsp <p>GitHub</p></button></a>
+			<a href=""><button class="custom-button "><i class="fa fa-linkedin" aria-hidden="true"></i> &nbsp &nbsp <p>LinkedIn</p></button></a>
+			<a href=""><button class="custom-button "><i class="fa fa-file-text-o" aria-hidden="true"></i> &nbsp &nbsp <p>Resume</p></button></a>
+			<a href="#projects"><button class="custom-button "><i class="fa fa-lightbulb-o" aria-hidden="true"></i> &nbsp &nbsp <p>Projects</p></button></a>
 		</div>
+
 	</div>
 
 	<div id="aboutme" class="content-section">
@@ -65,45 +59,37 @@
 			</h2>
 
 			<h2>
-				Honors: Magna Cum Laude GPA 3.73/4.00
+				Magna Cum Laude GPA 3.73/4.00
 			</h2>
 		</div>
+	</div>
 
-		<div id="skills" class="d-flex flex-direction-row">
+	<div id="skills" class="d-flex flex-direction-row">
 
-			<div id="experience">
-				<h1>I Have Experience With...</h1>
-				<p>NodeJS Express React Mongo Angular Spring</p>
-				<p>Git Agile/Scrum OOP MySQL VSCode</p>
-			</div>
+		<div id="experience">
+			<h1>I Made Stuff With...</h1>
+			<p>NodeJS Express React Mongo Angular Spring</p>
+			<p>Git Agile/Scrum OOP MySQL VSCode</p>
+		</div>
 
-			<div id="languages">
-				<h1>I Speak...</h1>
-				<p>System.out.println("Java")</p>
-				<p>console.log("JavaScript")</p>
-				<p>SELECT * FROM sql</p>
-			</div>
-
+		<div id="languages">
+			<h1>I Speak...</h1>
+			<p>System.out.println("Java")</p>
+			<p>console.log("JavaScript")</p>
+			<p>SELECT * FROM sql</p>
 		</div>
 
 	</div>
 
-	<div id="project" class="content-section">
+	
+	<div id="projects" class="content-section">
 		<div class="d-flex flex-column">
 			<h1 class='section-header' style="float: left !important;">Projects</h1>
-			<div class="selector">
-				<button type="button" class="btn btn-outline-dark ingredient-button">
-					NodeJS
-				</button>
-				<button type="button" class="btn btn-outline-dark ingredient-button">
-					NodeJS
-				</button> <button type="button" class="btn btn-outline-dark ingredient-button">
-					NodeJS
-				</button> <button type="button" class="btn btn-outline-dark ingredient-button">
-					NodeJS
-				</button> <button type="button" class="btn btn-outline-dark ingredient-button">
-					NodeJS
-				</button>
+
+			<div class="selector d-flex flex-row justify-content-around">
+			</div>
+
+			<div class="project-card-container d-flex flex-row justify-content-between flex-wrap">
 			</div>
 		</div>
 

@@ -1,6 +1,9 @@
+// AOS JS
 AOS.init();
 
 $('[data-aos]').parent().addClass('hideOverflowOnMobile');
+
+// Scroll smooth
 
 $(document).on('click', 'a[href^="#"]', function (event) {
 	event.preventDefault();
@@ -13,44 +16,135 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 	);
 });
 
+// Project data
 
+let projects=[
+	{
+		name:"SCW Learning App",
+		tech:["Electron", "SQLite3", "D3"],
+		description:"An app that allows sailors to test their knowledge in Seabee Combat Warfare theory. It has functionality of a quiz and collects statistics that are displayed using d3 Javascript library. Data allows users to improve in areas that they are suffering with taylored tests."
+	},
+	{
+		name:"Be On The Look Out",
+		tech:["Angular","Spring", "Micrsoft SQL Server"],
+		description:"An app that allows sailors to test their knowledge in Seabee Combat Warfare theory. It has functionality of a quiz and collects statistics that are displayed using d3 Javascript library. Data allows users to improve in areas that they are suffering with taylored tests."
+	},
+	{
+		name:"Geek Text Bookstore",
+		tech:["React", "NodeJS", "Express", "MariaDB"],
+		description:"A website completed by a team of 5 students as part of Software Engineering I. Features included: Book Browsing, Filtering and Sorting, Account Creation, Multiple Address and Credit Cards storage, Saved for later lists and Cart. Update: Database server that was serving the website is disabled as the project was completed. Deploying it over Google Cloud Services is currently in the works."
+	},
+	{
+		name:"Cook.io",
+		tech:["React", "NodeJS", "Express", "MongoDB"],
+		description:"A UI/UX project under production by a team of 5 students. The websites focus lies on creating a recipe website that would encourage younger people to cook more. The application will contain a recipe database, a user system with ratings and favorites, and a widget that will allow users to add the food that they have at home and suggest recipes based on that."
+	},
+	{
+		name:"PHP Crud",
+		tech:["MySQL", "PHP"],
+		description:"Two simple websites built to demonstrate knowledge in Create, Read, Update and Delete operations using PHP with a MySQL database. Simple Bootstrap elements were used as design was not of the essence."
+	},
+	{
+		name:"BSD Socket Chatroom",
+		tech:["Python"],
+		description:"Simple Client and Server Chat Room using Python BSD sockets"
+	}
+]
+
+let techUsed = ["NodeJS", "React", "Express", "MongoDB", "Spring", "Angular", "PHP", "SQL", "Electron", "Python"];
+
+// Initial fill
+
+projects.forEach(function (project, id) {
+	fillProjectTemplate(project, id);
+});
+
+techUsed.forEach(function(element){
+	fillTech(element);
+})
+
+function fillTech(element){
+	let template = `<button type="button" class="btn btn-outline-dark btn-lg tech-button" id="${element}"
+	value="${element}" >${element}
+	</button>`;
+	$('.selector').append(template);
+}
+
+function fillProjectTemplate(project, id) {
+	var projectTemplate = `
+			<div class="project-card" id="project-${id}">
+				<h1>${project.name}</h1>
+				<img src="" alt="">
+				<div class="d-flex flex-row justify-content-around">
+					<button class="btn btn-dark"><i class="fa fa-github" aria-hidden="true"></i> GitHub</button>
+				</div>
+			</div>
+	`;
+	$('.project-card-container').append(projectTemplate);
+}
+
+const searchTech = new Set();
+
+$('.tech-button').on('click', function (e) {
+
+	e.preventDefault();
+
+	// Clear the HTML
+	$('.project-card-container').empty();
+	console.log(searchTech)
+
+	// Reset the found array
+	let foundProjects = [];
+
+	// Toggle button color
+	$('#' + this.id).toggleClass('btn-outline-dark');
+	$('#' + this.id).toggleClass('btn-dark');
+
+	// Removes or adds ingredient from/to filter
+	if (searchTech.has($(this).val())) {
+		searchTech.delete($(this).val());
+		if(searchTech.size == 0){
+			projects.forEach(function (project, id) {
+				fillProjectTemplate(project, id);
+			});
+		}
+	} else {
+		searchTech.add($(this).val());
+	}
+
+
+	// Filter only works as an OR but not AND as desired
+	searchTech.forEach(function (tech) {
+
+		projects.forEach(function (project) {
+			// Actual filter
+			if (project.tech.indexOf(tech) !== -1) {
+				//Check if the recipe is already found
+				if (foundProjects.indexOf(project) === -1) {
+					foundProjects.push(project);
+				}
+			}
+		});
+	});
+
+	// Map to html
+	foundProjects.forEach(function (foundRecipe, id) {
+		fillProjectTemplate(foundRecipe, id);
+	});
+});
+
+
+// Typing logic
 
 var options = {
-	strings: ['', "Hi, I'm Slav! ^800 <br> I'm a Software Developer."],
-	typeSpeed: 90
+	strings: ['', "Hi, I'm Slav! ^600 <br> I'm a Software Developer."],
+	typeSpeed: 90,
+	backSpeed: 30, backDelay: 1000,
+    loop: true
 };
 var typed = new Typed('.typing', options);
 
-var radius = 140; // adjust to move out items in and out 
-var fields = $('.wheel-item'),
-	container = $('#wheel'),
-	width = container.width(),
-	height = container.height();
-var angle = 0,
-	step = (2 * Math.PI) / fields.length;
-fields.each(function () {
-	var x = Math.round(width / 2 + radius * Math.cos(angle) - $(this).width() / 2);
-	var y = Math.round(height / 2 + radius * Math.sin(angle) - $(this).height() / 2);
-	if (window.console) {
-		console.log($(this).text(), x, y);
-	}
-	$(this).css({
-		left: x + 'px',
-		top: y + 'px'
-	});
-	angle += step;
-});
-
-// var granimInstance = new Granim({
-// 	element: '#canvas-basic',
-// 	direction: 'diagonal',
-// 	isPausedWhenNotInView: true,
-// 	states: {
-// 		'default-state': {
-// 			gradients: [['#ff9966', '#ff5e62'], ['#00F260', '#0575E6'], ['#e1eec3', '#f05053']]
-// 		}
-// 	}
-// });
+// Particles JS
 
 particlesJS('particles-js', {
 	particles: {
@@ -113,25 +207,3 @@ particlesJS('particles-js', {
 	},
 	retina_detect: true
 });
-
-const burst = new mojs.Burst({
-	left: 0,
-	top: 0,
-	radius: { 4: 60 },
-	angle: 45,
-	children: {
-		shape: 'line',
-		radius: 3,
-		scale: 2,
-		stroke: '#FD7932',
-		strokeDasharray: '100%',
-		strokeDashoffset: { '-100%': '100%' },
-		duration: 700,
-		easing: 'quad.out'
-	}
-});
-
-document.addEventListener('click', function (e) {
-	burst.tune({ x: e.pageX, y: e.pageY }).replay();
-});
-

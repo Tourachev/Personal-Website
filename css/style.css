@@ -5,6 +5,8 @@ html {
 	padding: 0;
 	/* margin-inline-start: -5%; */
 	overflow-x: hidden;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+		'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
@@ -23,7 +25,7 @@ p {
 	font-size: 1.4em;
 }
 
-#logo{
+#logo {
 	width: 100px;
 	height: 100px;
 	margin: 2% 0% 3% 6%;
@@ -31,32 +33,83 @@ p {
 	border: 10px solid black;
 }
 
-#logo h1{
+#logo h1 {
 	color: white;
 	font-size: 4em;
 }
 
-
-
-#content{
+#content {
 	border: 10px solid black;
 	margin: 0% 6% 3% 6%;
 	/* Remove later */
-	height: 400vh;
+	/* height: 400vh; */
+	padding-bottom: 15%;
 }
 
-#greeting{
+#greeting {
 	width: 100%;
 }
-#hi{
-	margin: 17% 1% 3% 6% ; 
+#hi {
+	margin: 17% 1% 3% 8%;
 	width: 70%;
 }
-.typing{
-	margin-bottom: 3%;
+
+.typing {
+	margin-bottom: 10%;
 	font-size: 1.5em;
 	font-weight: 600;
+}
 
+.button-pannel {
+	width: 30%;
+	margin-top: 10%;
+	margin-right: 10%;
+}
+
+.button-pannel button {
+	margin: 3%;
+}
+
+.custom-button {
+	width: 100%;
+	padding-top: 5%;
+	background-color: black;
+	/* border-radius: 10px;- */
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+	justify-content: center;
+	transition: all 0.1s ease-in;
+}
+
+.custom-button:hover .fa-lightbulb-o {
+	color: yellow;
+}
+
+.custom-button:hover .fa-linkedin {
+	color: dodgerblue;
+}
+
+.custom-button:hover .fa-file-text-o {
+	color: #dd1c1a;
+}
+
+.custom-button:hover .fa-github {
+	color: #6e5494;
+}
+
+.custom-button:hover {
+	transform: translateX(-10px);
+}
+
+.custom-button p {
+	color: white;
+	font-size: 2em;
+}
+
+.custom-button i {
+	color: white;
+	font-size: 2em;
 }
 
 .wheel-assembly {
@@ -65,60 +118,63 @@ p {
 	width: 45%;
 }
 
-.wheel-assembly h1{
+.wheel-assembly h1 {
 	margin-bottom: -180px;
 	margin-left: 43%;
 }
 
-.wheel-assembly i{
+.wheel-assembly i {
 	font-size: 10rem;
 	margin-left: 35%;
 	margin-top: 20%;
 	position: absolute;
 }
 
-.button-fixed-size{
+.button-fixed-size {
 	max-width: 100px;
 	font-size: 600;
 	/* min-width: 20px; */
 }
 
-#aboutme{
+#aboutme {
 	margin-top: 13%;
 	/* border: 1px solid red; */
 }
 
-.section-header{
+.section-header {
 	float: right;
-	font-size: 10rem;
-
+	font-size: 12vw;
+	width: 70%;
+	margin-left: 3%;
 }
 
-#about-facts{
+#about-facts {
 	padding: 2%;
+	margin-left: 3%;
+	width: 30%;
 	font-size: 1.4em;
 	font-weight: 800;
 	background-color: black;
 	color: white;
 }
 
-#education{
+#education {
 	margin: 6% 3% 6% 3%;
 }
 
-#education h1{
+#education h1 {
 	font-size: 5em;
 }
 
-#education h2{
+#education h2 {
 	font-size: 3em;
 }
 
-#skills{
+#skills {
 	width: 100%;
 }
 
-#experience{
+#experience {
 	margin: 0% 0% 0% 3%;
 
 	width: 60%;
@@ -136,7 +192,7 @@ p {
 	font-weight: 600;
 }
 
-#languages{
+#languages {
 	margin: 0% 3% 0% 3%;
 	padding: 2%;
 	width: 40%;
@@ -147,23 +203,49 @@ p {
 
 #languages h1 {
 	/* text-align: center; */
-	font-size: 4em;
+	font-size: 6.5vw;
 	font-weight: 600;
-	margin-bottom: 6%;
+	margin-bottom: 8%;
 }
 
 #languages p {
-	font-size: 2em;
+	font-size: 2.4vw;
 	font-weight: 600;
 }
 
-#project{
-	margin: 6% 3% 0% 3%;
+#projects {
+	padding: 6% 3% 0% 3%;
 }
 
-.selector button{
+.selector{
+	margin-top: 6%;
+	margin-bottom: 3%;
+	flex-wrap: wrap;
+}
+
+.selector button {
+	margin: 0% 1% 1% 1%;
+	flex-grow: 10;
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
+
+.project-card-container{
+	/* border: 1px solid red; */
+	width: 100%;
+}
+
+.project-card{
+	border: 10px solid black;
+	width: 40%;
+	height: 40vh;
+	margin: 2%;
+}
+
+.project-card h1{
+	font-size: 3vw;
+	text-align: center;
+}
+
 
 
 @import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
@@ -224,31 +306,3 @@ p {
 		box-shadow: none;
 	}
 }
-
-#wheel {
-	width: 300px;
-	height: 300px;
-	margin: 10px auto;
-	/* border: 1px solid #000; */
-	position: relative;
-	/* border-radius: 50%; */
-	animation: spin 40s linear infinite;
-  }
-  .wheel-item {
-	position: absolute;
-	/* background: #f00; */
-	animation: spin 40s linear infinite reverse;
-  }
-  .wheel-item:nth-child(1):hover {-webkit-animation-play-state: paused;
-	  -moz-animation-play-state: paused;
-	  -o-animation-play-state: paused;}
-  @keyframes spin {
-	100% {
-	  transform: rotate(1turn);
-	}
-  }
-  #wheel:hover, 
-  #wheel:hover .wheel-item{ -webkit-animation-play-state: paused;
-	  -moz-animation-play-state: paused;
-	  -o-animation-play-state: paused;
-	  animation-play-state: paused;}
