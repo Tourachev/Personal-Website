@@ -20,35 +20,41 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 
 let projects = [
 	{
-		name: "SCW Learning App",
+		name: "SCW App",
 		tech: ["Electron", "SQLite3", "D3"],
 		description: "An app that allows sailors to test their knowledge in Seabee Combat Warfare theory. It has functionality of a quiz and collects statistics that are displayed using d3 Javascript library. Data allows users to improve in areas that they are suffering with taylored tests.",
-		img: "./img/img10.png"
+		github: "https://github.com/Tourachev/Electron-Tester"
+
 	},
 	{
 		name: "Be On The Look Out",
 		tech: ["Angular", "Spring", "MSSQL Server"],
-		description: "An app that allows sailors to test their knowledge in Seabee Combat Warfare theory. It has functionality of a quiz and collects statistics that are displayed using d3 Javascript library. Data allows users to improve in areas that they are suffering with taylored tests."
+		description: "An app that allows sailors to test their knowledge in Seabee Combat Warfare theory. It has functionality of a quiz and collects statistics that are displayed using d3 Javascript library. Data allows users to improve in areas that they are suffering with taylored tests.",
+		github: ""
 	},
 	{
 		name: "Geek Text Bookstore",
 		tech: ["React", "NodeJS", "Express", "MariaDB"],
-		description: "A website completed by a team of 5 students as part of Software Engineering I. Features included: Book Browsing, Filtering and Sorting, Account Creation, Multiple Address and Credit Cards storage, Saved for later lists and Cart. Update: Database server that was serving the website is disabled as the project was completed. Deploying it over Google Cloud Services is currently in the works."
+		description: "A website completed by a team of 5 students as part of Software Engineering I. Features included: Book Browsing, Filtering and Sorting, Account Creation, Multiple Address and Credit Cards storage, Saved for later lists and Cart. Update: Database server that was serving the website is disabled as the project was completed. Deploying it over Google Cloud Services is currently in the works.",
+		github: "https://github.com/Tourachev/Geek-Text-Bookstore"
 	},
 	{
 		name: "Cook.io",
 		tech: ["React", "NodeJS", "Express", "MongoDB"],
-		description: "A UI/UX project under production by a team of 5 students. The websites focus lies on creating a recipe website that would encourage younger people to cook more. The application will contain a recipe database, a user system with ratings and favorites, and a widget that will allow users to add the food that they have at home and suggest recipes based on that."
+		description: "A UI/UX project under production by a team of 5 students. The websites focus lies on creating a recipe website that would encourage younger people to cook more. The application will contain a recipe database, a user system with ratings and favorites, and a widget that will allow users to add the food that they have at home and suggest recipes based on that.",
+		github: "https://github.com/Tourachev/cook.io"
 	},
 	{
 		name: "PHP Crud",
 		tech: ["MySQL", "PHP"],
-		description: "Two simple websites built to demonstrate knowledge in Create, Read, Update and Delete operations using PHP with a MySQL database. Simple Bootstrap elements were used as design was not of the essence."
+		description: "Two simple websites built to demonstrate knowledge in Create, Read, Update and Delete operations using PHP with a MySQL database. Simple Bootstrap elements were used as design was not of the essence.",
+		github: "https://github.com/Tourachev/PHP-CRUD"
 	},
 	{
 		name: "BSD Socket Chatroom",
 		tech: ["Python"],
-		description: "Simple Client and Server Chat Room using Python BSD sockets"
+		description: "Simple Client and Server Chat Room using Python BSD sockets",
+		github: "https://github.com/Tourachev/BSD-Chat-Room"
 	}
 ]
 
@@ -81,9 +87,12 @@ function fillProjectTemplate(project, id) {
 					</div>
 					<div class="project-card-n-bottom">
 						<h1 class="center"> ${stringArray}</h1>
+						<a href="${project.github}">
 						<div class="d-flex flex-column justify-content-center align-items-center"><button class="custom-button-card"><i class="fa fa-github"
 									aria-hidden="true"></i> &nbsp
 								GitHub</button></div>
+						</a>
+						
 					</div>
 				</div>
 	`;
