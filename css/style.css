@@ -23,6 +23,149 @@ p {
 	font-size: 1.4em;
 }
 
+#logo{
+	width: 100px;
+	height: 100px;
+	margin: 2% 0% 3% 6%;
+	background-color: black;
+	border: 10px solid black;
+}
+
+#logo h1{
+	color: white;
+	font-size: 4em;
+}
+
+
+
+#content{
+	border: 10px solid black;
+	margin: 0% 6% 3% 6%;
+	/* Remove later */
+	height: 400vh;
+}
+
+#greeting{
+	width: 100%;
+}
+#hi{
+	margin: 17% 1% 3% 6% ; 
+	width: 70%;
+}
+.typing{
+	margin-bottom: 3%;
+	font-size: 1.5em;
+	font-weight: 600;
+
+}
+
+.wheel-assembly {
+	position: relative;
+	margin-top: 22%;
+	width: 45%;
+}
+
+.wheel-assembly h1{
+	margin-bottom: -180px;
+	margin-left: 43%;
+}
+
+.wheel-assembly i{
+	font-size: 10rem;
+	margin-left: 35%;
+	margin-top: 20%;
+	position: absolute;
+}
+
+.button-fixed-size{
+	max-width: 100px;
+	font-size: 600;
+	/* min-width: 20px; */
+}
+
+#aboutme{
+	margin-top: 13%;
+	/* border: 1px solid red; */
+}
+
+.section-header{
+	float: right;
+	font-size: 10rem;
+
+}
+
+#about-facts{
+	padding: 2%;
+	font-size: 1.4em;
+	font-weight: 800;
+	background-color: black;
+	color: white;
+}
+
+#education{
+	margin: 6% 3% 6% 3%;
+}
+
+#education h1{
+	font-size: 5em;
+}
+
+#education h2{
+	font-size: 3em;
+}
+
+#skills{
+	width: 100%;
+}
+
+#experience{
+	margin: 0% 0% 0% 3%;
+
+	width: 60%;
+}
+
+#experience h1 {
+	/* text-align: center; */
+	font-size: 4em;
+	font-weight: 600;
+	margin-bottom: 6%;
+}
+
+#experience p {
+	font-size: 2em;
+	font-weight: 600;
+}
+
+#languages{
+	margin: 0% 3% 0% 3%;
+	padding: 2%;
+	width: 40%;
+	color: white;
+	background-color: black;
+	border: 1px solid black;
+}
+
+#languages h1 {
+	/* text-align: center; */
+	font-size: 4em;
+	font-weight: 600;
+	margin-bottom: 6%;
+}
+
+#languages p {
+	font-size: 2em;
+	font-weight: 600;
+}
+
+#project{
+	margin: 6% 3% 0% 3%;
+}
+
+.selector button{
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+
 @import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
 
 :root {
@@ -81,3 +224,31 @@ p {
 		box-shadow: none;
 	}
 }
+
+#wheel {
+	width: 300px;
+	height: 300px;
+	margin: 10px auto;
+	/* border: 1px solid #000; */
+	position: relative;
+	/* border-radius: 50%; */
+	animation: spin 40s linear infinite;
+  }
+  .wheel-item {
+	position: absolute;
+	/* background: #f00; */
+	animation: spin 40s linear infinite reverse;
+  }
+  .wheel-item:nth-child(1):hover {-webkit-animation-play-state: paused;
+	  -moz-animation-play-state: paused;
+	  -o-animation-play-state: paused;}
+  @keyframes spin {
+	100% {
+	  transform: rotate(1turn);
+	}
+  }
+  #wheel:hover, 
+  #wheel:hover .wheel-item{ -webkit-animation-play-state: paused;
+	  -moz-animation-play-state: paused;
+	  -o-animation-play-state: paused;
+	  animation-play-state: paused;}
