@@ -373,3 +373,82 @@ p {
 		box-shadow: none;
 	}
 }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+	.typing{
+		font-size: 10vw !important;
+	}
+	.button-pannel{
+		margin-left: 3%;
+	}
+
+	.section-header{
+		margin-left: 3%;
+		font-size: 15vw;
+		font-weight: 800;
+	}
+	#education {
+		margin-left: 6%;
+	}
+	#education h1{
+		font-size: 10vw !important;
+		font-weight: 800;
+
+	}
+
+	#education h2{
+		font-size: 8vw !important;
+	}
+	#languages{
+		margin-left: 9%;
+	}
+	#languages h1{
+		font-size: 10vw !important;
+	}
+
+	#languages p{
+		font-size: 6vw !important;
+	}
+	#experience h1{
+		font-size: 10vw !important;
+		font-weight: 800;
+
+	}
+	#experience{
+		margin-top: 3%;
+	}
+	.selector{
+		margin: 3%;
+	}
+	.project-card-n{
+		border: none;
+		margin-left: 11%;
+		height: 30vh;
+		margin-bottom: 10%;
+	}
+	.project-card-n-top{
+		width: 100%;
+		padding-top: 5vh;
+	}
+
+	.project-card-n-top h1{
+		font-weight: 600;
+		font-size: 7vw;
+	}
+
+	.project-card-n-bottom{
+		width: 100%;
+		padding-top: 3vh;
+
+	}
+
+	.project-card-n-bottom h1{
+		font-size: 6vw;
+		font-weight: 600;
+	}
+
+	.custom-button-card {
+		display: none;
+	}
+}
