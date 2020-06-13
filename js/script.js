@@ -81,7 +81,7 @@ function fillProjectTemplate(project, id) {
 
 	var stringArray = project.tech.join(', ');
 	var projectTemplate = `
-				<div class="project-card-n col-12" id="project-${id}">
+				<div class="project-card-n col-11 col-sm-11 col-md-11 col-lg-11 col-xl-5" id="project-${id}">
 					<div class="project-card-n-top">
 						<h1 class="center">${project.name}</h1>
 					</div>
