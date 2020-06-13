@@ -1,66 +1,11 @@
-let navbar_adjust = 890;
+// AOS JS
+AOS.init();
 
-function myFunction(x) {
-	if (x.matches) {
-		// If media query matches
-		navbar_adjust = 807;
-	}
-}
+$('[data-aos]').parent().addClass('hideOverflowOnMobile');
 
-var x = window.matchMedia('(max-width: 800px)');
-myFunction(x); // Call listener function at run time
-x.addListener(myFunction); // Attach listener function on state changes
+// Scroll smooth
 
-$(function() {
-	$(window).scroll(function() {
-		if ($(this).scrollTop() > navbar_adjust) {
-			$('body #navbar ').addClass('colorBack', 1000, 'easeOutBounce');
-		}
-		if ($(this).scrollTop() < navbar_adjust) {
-			$('body #navbar').removeClass('colorBack', 1000, 'easeOutBounce');
-		}
-	});
-});
-
-$('[data-aos]')
-	.parent()
-	.addClass('hideOverflowOnMobile');
-
-$('#skills-button').click(function() {
-	$('#education-description').fadeOut(400);
-	$('#aboutme-description').fadeOut(400);
-	$('#skills-buttona').addClass('active-button');
-	$('#aboutme-buttona').removeClass('active-button');
-	$('#education-buttona').removeClass('active-button');
-
-	setTimeout(function() {
-		$('#skills-description').fadeIn();
-	}, 400);
-});
-$('#education-button').click(function() {
-	$('#aboutme-description').fadeOut(400);
-	$('#skills-description').fadeOut(400);
-	$('#education-buttona').addClass('active-button');
-	$('#skills-buttona').removeClass('active-button');
-	$('#aboutme-buttona').removeClass('active-button');
-
-	setTimeout(function() {
-		$('#education-description').fadeIn();
-	}, 400);
-});
-$('#aboutme-button').click(function() {
-	$('#education-description').fadeOut(400);
-	$('#skills-description').fadeOut(400);
-	$('#aboutme-buttona').addClass('active-button');
-	$('#skills-buttona').removeClass('active-button');
-	$('#education-buttona').removeClass('active-button');
-
-	setTimeout(function() {
-		$('#aboutme-description').fadeIn();
-	}, 400);
-});
-
-$(document).on('click', 'a[href^="#"]', function(event) {
+$(document).on('click', 'a[href^="#"]', function (event) {
 	event.preventDefault();
 
 	$('html, body').animate(
@@ -71,49 +16,173 @@ $(document).on('click', 'a[href^="#"]', function(event) {
 	);
 });
 
-var granimInstance = new Granim({
-	element: '#canvas-basic',
-	direction: 'diagonal',
-	isPausedWhenNotInView: true,
-	states: {
-		'default-state': {
-			gradients: [
-				['#ff9966', '#ff5e62'],
-				['#00F260', '#0575E6'],
-				['#e1eec3', '#f05053']
-			]
-		}
+// Project data
+
+let projects = [
+	{
+		name: "SCW App",
+		tech: ["Electron", "SQLite3", "D3"],
+		description: "An app that allows sailors to test their knowledge in Seabee Combat Warfare theory. It has functionality of a quiz and collects statistics that are displayed using d3 Javascript library. Data allows users to improve in areas that they are suffering with taylored tests.",
+		github: "https://github.com/Tourachev/Electron-Tester"
+
+	},
+	{
+		name: "Be On The Look Out",
+		tech: ["Angular", "Spring", "MSSQL Server"],
+		description: "An app that allows sailors to test their knowledge in Seabee Combat Warfare theory. It has functionality of a quiz and collects statistics that are displayed using d3 Javascript library. Data allows users to improve in areas that they are suffering with taylored tests.",
+		github: ""
+	},
+	{
+		name: "Geek Text Bookstore",
+		tech: ["React", "NodeJS", "Express", "MariaDB"],
+		description: "A website completed by a team of 5 students as part of Software Engineering I. Features included: Book Browsing, Filtering and Sorting, Account Creation, Multiple Address and Credit Cards storage, Saved for later lists and Cart. Update: Database server that was serving the website is disabled as the project was completed. Deploying it over Google Cloud Services is currently in the works.",
+		github: "https://github.com/Tourachev/Geek-Text-Bookstore"
+	},
+	{
+		name: "Cook.io",
+		tech: ["React", "NodeJS", "Express", "MongoDB"],
+		description: "A UI/UX project under production by a team of 5 students. The websites focus lies on creating a recipe website that would encourage younger people to cook more. The application will contain a recipe database, a user system with ratings and favorites, and a widget that will allow users to add the food that they have at home and suggest recipes based on that.",
+		github: "https://github.com/Tourachev/cook.io"
+	},
+	{
+		name: "PHP Crud",
+		tech: ["MySQL", "PHP"],
+		description: "Two simple websites built to demonstrate knowledge in Create, Read, Update and Delete operations using PHP with a MySQL database. Simple Bootstrap elements were used as design was not of the essence.",
+		github: "https://github.com/Tourachev/PHP-CRUD"
+	},
+	{
+		name: "BSD Socket Chatroom",
+		tech: ["Python"],
+		description: "Simple Client and Server Chat Room using Python BSD sockets",
+		github: "https://github.com/Tourachev/BSD-Chat-Room"
 	}
+]
+
+let techUsed = ["NodeJS", "React", "Express", "MongoDB", "Spring", "Angular", "PHP", "SQL", "Electron", "Python"];
+
+// Initial fill
+
+projects.forEach(function (project, id) {
+	fillProjectTemplate(project, id);
 });
 
-AOS.init();
+techUsed.forEach(function (element) {
+	fillTech(element);
+})
+
+function fillTech(element) {
+	let template = `<button type="button" class="btn btn-outline-dark btn-lg tech-button" id="${element}"
+	value="${element}" >${element}
+	</button>`;
+	$('.selector').append(template);
+}
+
+function fillProjectTemplate(project, id) {
+
+	var stringArray = project.tech.join(', ');
+	var projectTemplate = `
+				<div class="project-card-n col-11 col-sm-11 col-md-11 col-lg-11 col-xl-5" id="project-${id}">
+					<div class="project-card-n-top">
+						<h1 class="center">${project.name}</h1>
+					</div>
+					<div class="project-card-n-bottom">
+						<h1 class="center"> ${stringArray}</h1>
+						<a href="${project.github}">
+						<div class="d-flex flex-column justify-content-center align-items-center"><button class="custom-button-card"><i class="fa fa-github"
+									aria-hidden="true"></i> &nbsp
+								GitHub</button></div>
+						</a>
+						
+					</div>
+				</div>
+	`;
+
+	$('.project-card-container').append(projectTemplate);
+	// $('.img-' + id).css('background-image', 'url(' + project.img + ')');
+}
+
+const searchTech = new Set();
+
+$('.tech-button').on('click', function (e) {
+
+	e.preventDefault();
+
+	// Clear the HTML
+	$('.project-card-container').empty();
+	console.log(searchTech)
+
+	// Reset the found array
+	let foundProjects = [];
+
+	// Toggle button color
+	$('#' + this.id).toggleClass('btn-outline-dark');
+	$('#' + this.id).toggleClass('btn-dark');
+
+	// Removes or adds ingredient from/to filter
+	if (searchTech.has($(this).val())) {
+		searchTech.delete($(this).val());
+		if (searchTech.size == 0) {
+			projects.forEach(function (project, id) {
+				fillProjectTemplate(project, id);
+			});
+		}
+	} else {
+		searchTech.add($(this).val());
+	}
+
+
+	// Filter only works as an OR but not AND as desired
+	searchTech.forEach(function (tech) {
+
+		projects.forEach(function (project) {
+			// Actual filter
+			if (project.tech.indexOf(tech) !== -1) {
+				//Check if the recipe is already found
+				if (foundProjects.indexOf(project) === -1) {
+					foundProjects.push(project);
+				}
+			}
+		});
+	});
+
+	// Map to html
+	foundProjects.forEach(function (foundRecipe, id) {
+		fillProjectTemplate(foundRecipe, id);
+	});
+});
+
+
+// Typing logic
 
 var options = {
-	strings: ['', "Hi, I'm Slav! ^800 <br> I'm a Computer Science Student."],
-	typeSpeed: 90
+	strings: ['', "Hi, I'm Slav! ^600 <br> I'm a Software Developer."],
+	typeSpeed: 90,
+	backSpeed: 30, backDelay: 1000,
+	loop: true
 };
+var typed = new Typed('.typing', options);
 
-var typed = new Typed('.element', options);
+// Particles JS
 
 particlesJS('particles-js', {
 	particles: {
-		number: {value: 150, density: {enable: true, value_area: 800}},
-		color: {value: '#ffffff'},
+		number: { value: 150, density: { enable: true, value_area: 800 } },
+		color: { value: '#ffffff' },
 		shape: {
 			type: 'circle',
-			stroke: {width: 0, color: '#000000'},
-			polygon: {nb_sides: 5},
-			image: {src: 'img/github.svg', width: 100, height: 100}
+			stroke: { width: 0, color: '#000000' },
+			polygon: { nb_sides: 5 },
+			image: { src: 'img/github.svg', width: 100, height: 100 }
 		},
 		opacity: {
 			value: 0.8,
 			random: false,
-			anim: {enable: false, speed: 1, opacity_min: 0.1, sync: false}
+			anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false }
 		},
 		size: {
 			value: 4,
 			random: true,
-			anim: {enable: false, speed: 40, size_min: 0.1, sync: false}
+			anim: { enable: false, speed: 40, size_min: 0.1, sync: false }
 		},
 		line_linked: {
 			enable: false,
@@ -130,18 +199,18 @@ particlesJS('particles-js', {
 			straight: false,
 			out_mode: 'out',
 			bounce: false,
-			attract: {enable: false, rotateX: 600, rotateY: 1200}
+			attract: { enable: false, rotateX: 600, rotateY: 1200 }
 		}
 	},
 	interactivity: {
 		detect_on: 'canvas',
 		events: {
-			onhover: {enable: true, mode: 'bubble'},
-			onclick: {enable: true, mode: 'repulse'},
+			onhover: { enable: true, mode: 'bubble' },
+			onclick: { enable: true, mode: 'repulse' },
 			resize: true
 		},
 		modes: {
-			grab: {distance: 400, line_linked: {opacity: 1}},
+			grab: { distance: 400, line_linked: { opacity: 1 } },
 			bubble: {
 				distance: 100,
 				size: 5,
@@ -149,31 +218,10 @@ particlesJS('particles-js', {
 				opacity: 10,
 				speed: 3
 			},
-			repulse: {distance: 80, duration: 0.4},
-			push: {particles_nb: 4},
-			remove: {particles_nb: 2}
+			repulse: { distance: 80, duration: 0.4 },
+			push: { particles_nb: 4 },
+			remove: { particles_nb: 2 }
 		}
 	},
 	retina_detect: true
-});
-
-const burst = new mojs.Burst({
-	left: 0,
-	top: 0,
-	radius: {4: 60},
-	angle: 45,
-	children: {
-		shape: 'line',
-		radius: 3,
-		scale: 2,
-		stroke: '#FD7932',
-		strokeDasharray: '100%',
-		strokeDashoffset: {'-100%': '100%'},
-		duration: 700,
-		easing: 'quad.out'
-	}
-});
-
-document.addEventListener('click', function(e) {
-	burst.tune({x: e.pageX, y: e.pageY}).replay();
 });
