@@ -17,13 +17,20 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 });
 
 // Time
-
 function liveTime(){
-	var today = new Date();
-	var time = (today.getHours()+4) + ":" + today.getMinutes() + ":" + today.getSeconds();
-	$('#current-time').text(time)
+	try {
+		var today = new Date();
+		var time = (today.getHours()+4) + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+		$('#current-time').text(time)
+		$('#time-container').fadeIn(2000);
+	} catch (error) {
+		$('#time-container').fadeOut(2000);
+	}
 }
+
 setInterval(liveTime, 1000);
+
 // Project data
 
 let projects = [

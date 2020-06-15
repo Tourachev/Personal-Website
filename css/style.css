@@ -37,6 +37,8 @@ p {
 	margin: 3% 6% 3% 6%;
 }
 
+
+
 #logo {
 	width: 100px;
 	height: 100px;
@@ -415,10 +417,10 @@ p {
 		margin: 3%;
 	}
 	.project-card-n{
-		border: none;
+		/* border: none;
 		margin-left: 11%;
 		height: 30vh;
-		margin-bottom: 10%;
+		margin-bottom: 10%; */
 	}
 	.project-card-n-top{
 		width: 100%;
@@ -444,6 +446,18 @@ p {
 	.custom-button-card {
 		display: none;
 	}
+
+	#time-container{
+		font-size:100% !important;
+	}
+}
+
+@media only screen and (min-width: 600px ) and (max-width:767px){
+
+	#time-container{
+		font-size:100% !important;
+
+	}
 }
 
 @media only screen and (min-width: 600px ) and (max-width:769px){
@@ -467,4 +481,5 @@ p {
 		font-weight: 600;
 		font-size: 7vw;
 	}
+
 }
