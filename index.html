@@ -12,9 +12,14 @@
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
 		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
 </head>
-<div id="logo">
-	<h1>VT</h1>
+
+<div class="d-flex flex-row justify-content-between top-container">
+	<div id="logo">
+		<h1>VT</h1>
+	</div>
+	<h1 class="mt-4">Current Zulu Time is: <span id="current-time"></span> </h1>
 </div>
+
 <div id="content">
 	<div id="greeting" class="d-flex content-section flex-row row">
 
@@ -96,7 +101,35 @@
 			</div>
 
 			<div class="project-card-container d-flex flex-row justify-content-around flex-wrap row">
-			</div>
+			</div>			
+			
+			<!-- <div class="project-card-container d-flex flex-row justify-content-around flex-wrap row">
+
+				<div class="project-card-n col-11 col-sm-11 col-md-11 col-lg-11 col-xl-5" id="project-${id}">
+
+					<div class="project-card-n-top">
+
+						<h1 class="center">${project.name}</h1>
+						
+					</div>
+
+					<div class="project-card-n-bottom d-flex flex-column align-items-center">
+						<h1 class="center"> ${stringArray}</h1>
+						<a href="${project.github}" class="mx-auto">
+								<button class="btn btn-dark">
+									<i class="fa fa-github"aria-hidden="true"></i>
+									&nbsp
+									GitHub
+								</button>
+						</a>
+
+					</div>
+
+				</div>
+				
+			</div> -->
+
+			
 		</div>
 
 	</div>

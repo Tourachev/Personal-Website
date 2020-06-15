@@ -16,6 +16,14 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 	);
 });
 
+// Time
+
+function liveTime(){
+	var today = new Date();
+	var time = (today.getHours()+4) + ":" + today.getMinutes() + ":" + today.getSeconds();
+	$('#current-time').text(time)
+}
+setInterval(liveTime, 1000);
 // Project data
 
 let projects = [
@@ -81,20 +89,27 @@ function fillProjectTemplate(project, id) {
 
 	var stringArray = project.tech.join(', ');
 	var projectTemplate = `
-				<div class="project-card-n col-11 col-sm-11 col-md-11 col-lg-11 col-xl-5" id="project-${id}">
-					<div class="project-card-n-top">
-						<h1 class="center">${project.name}</h1>
-					</div>
-					<div class="project-card-n-bottom">
-						<h1 class="center"> ${stringArray}</h1>
-						<a href="${project.github}">
-						<div class="d-flex flex-column justify-content-center align-items-center"><button class="custom-button-card"><i class="fa fa-github"
-									aria-hidden="true"></i> &nbsp
-								GitHub</button></div>
-						</a>
-						
-					</div>
-				</div>
+		<div class="project-card-n col-11 col-sm-11 col-md-11 col-lg-11 col-xl-5" id="project-${id}">
+
+		<div class="project-card-n-top">
+
+			<h1 class="center">${project.name}</h1>
+			
+		</div>
+
+	<div class="project-card-n-bottom d-flex flex-column align-items-center">
+		<h1 class="center"> ${stringArray}</h1>
+		<a href="${project.github}" class="mt-3">
+				<button class="btn btn-dark btn-lg">
+					<i class="fa fa-github"aria-hidden="true"></i>
+					&nbsp
+					GitHub
+				</button>
+		</a>
+
+	</div>
+
+</div>
 	`;
 
 	$('.project-card-container').append(projectTemplate);
@@ -108,7 +123,7 @@ $('.tech-button').on('click', function (e) {
 	e.preventDefault();
 
 	// Clear the HTML
-	$('.project-card-container').empty();
+	$('.project-card-container').empty()
 	console.log(searchTech)
 
 	// Reset the found array
