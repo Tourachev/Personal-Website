@@ -5,3 +5,4 @@ This is a website created from scratch to showcase some of the projects that I h
 # To Do
 
 Mobile friendly design.
+-
